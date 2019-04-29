@@ -155,7 +155,7 @@ def runModels(value_list,building_type,city,temp_id,output):
     f.close()
     
     # run simulation
-    df = subprocess.Popen(['/usr/local/EnergyPlus-8-6-0/energyplus-8.6.0','-w','./epw/'+city+'.epw','-d','./'+str(temp_id),'./'+str(temp_id)+'/run.idf'],stdout=subprocess.PIPE)
+    df = subprocess.Popen(['/projects/mast4878/EPlus/build/Products/energyplus-8.6.0','-w','./epw/'+city+'.epw','-d','./'+str(temp_id),'./'+str(temp_id)+'/run.idf'],stdout=subprocess.PIPE)
     output1,err = df.communicate()
     print(output1.decode('utf-8'))
     if not err is None:
